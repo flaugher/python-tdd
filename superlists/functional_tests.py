@@ -15,6 +15,7 @@ class NewVisitorTest(unittest.TestCase):
     def test_can_start_a_list_and_retrieve_it_later(self):
         # User goes to homepage of a to-do web app
         self.browser.get('http://localhost:8000')
+        self.browser.implicitly_wait(3)  # wait up to 3 sec. for page to load
 
         # User notices page title and header mentioning to-do list
         self.assertIn('To-Do', self.browser.title)
